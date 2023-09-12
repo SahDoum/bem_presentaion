@@ -85,7 +85,8 @@ p.paragraph {
 
 ## Пример
 Предположим нам надо сделать такую карточку:
-![](example.png)
+<img src="example.png" alt="" width="200"/>
+
 
 Разобьем ее по методологии БЭМ
 `
@@ -160,9 +161,9 @@ promo-archive__icon--visible
 `
 
 Предположим, мы хотим такую структуру элементов на широких экранах:
-![](flex-container-abstract.png)
+<img src="flex-container-abstract.png" alt="" width="200"/>
 И такую на экранах меньше 720px:
-![](flex-container-mobile-abstract.png)
+<img src="flex-container-mobile-abstract.png" alt="" width="200"/>
 
 Хочется написать что-то вроде такого:
 
@@ -227,9 +228,11 @@ promo-archive__icon--visible
 
 ## Container-query
 Вернемся к примеру с block_promo-archive. Предположим, нам надо сделать, чтобы на широких экранах картинка выглядела так:
-![](flex-container.png)
+<img src="flex-container.png" alt="" width="200"/>
+
 И на экранах меньше 720px:
-![](flex-container-mobile.png) 
+<img src="flex-container-mobile.png" alt="" width="200"/>
+
 
 Внешний стиль контейнера мы уже научились определять через flex-box. Попробуем определить геометрию контейнеров без помощи media-query.
 
@@ -246,6 +249,7 @@ promo-archive__icon--visible
   }
 }
 `
+
 
 ## Snap-points
 `
@@ -267,5 +271,4 @@ promo-archive__icon--visible
 ## Ссылки
 [6 новых возможностей CSS, которые должен знать каждый front-end разработчик в 2023 году](https://habr.com/ru/articles/726224/)
 [На английском](https://web.dev/6-css-snippets-every-front-end-developer-should-know-in-2023/)
-
 [Возможности современного адаптива](https://ishadeed.com/)
