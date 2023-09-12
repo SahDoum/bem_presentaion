@@ -169,6 +169,8 @@ promo-archive__icon--visible
 
 Предположим, мы хотим такую структуру элементов на широких экранах:
 ![](flex-container-abstract.png | width=200)
+<img src="flex-container-abstract.png" width="100" height="100">
+
 И такую на экранах меньше 720px:
 ![](flex-container-mobile-abstract.png | width=200)
 
