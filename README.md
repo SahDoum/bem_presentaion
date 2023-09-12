@@ -29,7 +29,7 @@ One thing to note about levels on this tier is that the number of hits on the hi
 
 Для примера, попробуйте понять, какой стиль выиграет:
 
-`
+```
 .paragraph:first-of-type {
   color: sandybrown;
 }
@@ -37,7 +37,7 @@ One thing to note about levels on this tier is that the number of hits on the hi
 p.paragraph {
   color: orchid;
 }
-`
+```
 
 ## Теперь про то, как устроен БЭМ
 Методология БЭМ основана на конмпонентном взгляде на верстку. 
@@ -49,47 +49,53 @@ p.paragraph {
 ### Блок 
 Независимый компонент страницы, который может быть переиспользован.  В HTML определяется атрибутом class.
 - Название — это смысл блока, не его состояние.
-`
+
+```
 <div class=“error”></div> ✅
 <div class=“red-button”></div>❌
-`
+```
 - Блок определяет только свою внутреннюю геометрию. Как он ориентирован снаружи (отступы, границы, расположение) — не задается
 - Блоки можно вкладывать друг в друга
-`
+
+```
 <!-- Блок `header` -->
 <header class="header">
     <!-- Вложенный блок `logo` -->
     <div class="logo"></div>
 </header>
-`
+```
 
 ### Элемент 
 Составная часть блока. Неотделимая от блока, но не обязательная.
 - Имя элемента задается по такой схеме: `имя-блока__имя-элемента`
-`
+
+```
 <form class="search-form">
     <!-- Элемент `input` блока `search-form` -->
     <input class=“search-form__input”>
 </form>
-`
+```
 
 ### Модификатор
 Сущность, которая характеризуется вопросом "Какой?"
 - Имя модификатора задается по такой схеме: `имя-блока--модификатор` или `имя-блока__имя-элемента--модификатор` 
-`
+
+```
 <form class="search-form">
     <!-- Элемент `input` блока `search-form` -->
     <input class=“search-form__input”>
 </form>
-`
+```
 
 ## Пример
 Предположим нам надо сделать такую карточку:
-<img src="example.png" alt="" width="200"/>
+![](example.png)
+
 
 
 Разобьем ее по методологии БЭМ
-`
+
+```
 promo-archive
 promo-archive__link
 promo-archive__image
@@ -98,10 +104,11 @@ promo-archive__title
 promo-archive__description
 promo-archive__icon
 promo-archive__icon--visible
-`
+```
 
 Соответсвующий SCSS код:
-`
+
+```
 .promo-archive {
   &_link {}
   &_image {}
@@ -113,7 +120,7 @@ promo-archive__icon--visible
     }
   }
 }
-`
+```
 
 ## Принципы, на что обращать внимание
 - Проектировать страницу на основе модели БЭМ
@@ -152,22 +159,22 @@ promo-archive__icon--visible
 - Организация адаптивной структуры
 - Центрирование элементов
 
-`
+```
 .flex-block {
 	display: flex;
 	align-self: center;
 	justify-content: center;
 }
-`
+```
 
 Предположим, мы хотим такую структуру элементов на широких экранах:
-<img src="flex-container-abstract.png" alt="" width="200"/>
+![](flex-container-abstract.png | width=200)
 И такую на экранах меньше 720px:
-<img src="flex-container-mobile-abstract.png" alt="" width="200"/>
+![](flex-container-mobile-abstract.png | width=200)
 
 Хочется написать что-то вроде такого:
 
-`
+```
 .block_promo-archive {}
 
   .promo-archive:nth-child(n+2) {
@@ -190,10 +197,11 @@ promo-archive__icon--visible
       margin-right: 0px;
     } 
   }
- `
+```
 
 Попробуем задать то же самое поведение с помощью флекс-бокса:
-`
+
+```
 .block_promo-archive {
     flex-wrap: wrap;
     display: flex;
@@ -201,7 +209,7 @@ promo-archive__icon--visible
 }
 .block_promo-archive .promo-archive:nth-child(n+2) {
     flex: max(360px,40%);
-`
+```
 
 Заметно короче и элегантнее. Контейнер сам оборачивает элементы и переносит по неободимости на новую строку, а элементы сами определяют свой внутренний размер.
 
@@ -212,7 +220,7 @@ promo-archive__icon--visible
 - grid-areas
 - Больше не использовать position: absolute
 
-`
+```
 .pile {
   display: grid;
   place-content: center;
@@ -221,22 +229,23 @@ promo-archive__icon--visible
 .pile > * {
   grid-area: 1/1;
 }
-`
+```
 
 [Все о возможностях Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
 
 ## Container-query
 Вернемся к примеру с block_promo-archive. Предположим, нам надо сделать, чтобы на широких экранах картинка выглядела так:
-<img src="flex-container.png" alt="" width="200"/>
+![](flex-container.png | width=200)
+
 
 И на экранах меньше 720px:
-<img src="flex-container-mobile.png" alt="" width="200"/>
+![](flex-container-mobile.png | width=200)
 
 
 Внешний стиль контейнера мы уже научились определять через flex-box. Попробуем определить геометрию контейнеров без помощи media-query.
 
-`
+```
 .promo-archive {
   $root: &;
   container: promo-container / inline-size;
@@ -248,11 +257,11 @@ promo-archive__icon--visible
   	...
   }
 }
-`
+```
 
 
 ## Snap-points
-`
+```
 .snaps {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
@@ -266,9 +275,10 @@ promo-archive__icon--visible
 .snap-force-stop {
   scroll-snap-stop: always;
 }
-`
+```
 
 ## Ссылки
 [6 новых возможностей CSS, которые должен знать каждый front-end разработчик в 2023 году](https://habr.com/ru/articles/726224/)
 [На английском](https://web.dev/6-css-snippets-every-front-end-developer-should-know-in-2023/)
+
 [Возможности современного адаптива](https://ishadeed.com/)
