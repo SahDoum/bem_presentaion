@@ -168,11 +168,10 @@ promo-archive__icon--visible
 ```
 
 Предположим, мы хотим такую структуру элементов на широких экранах:
-![](flex-container-abstract.png | width=200)
-<img src="flex-container-abstract.png" width="100" height="100">
+<img src="flex-container-abstract.png" width="200">
 
 И такую на экранах меньше 720px:
-![](flex-container-mobile-abstract.png | width=200)
+<img src="flex-container-mobile-abstract.png" width="200">
 
 Хочется написать что-то вроде такого:
 
@@ -238,11 +237,13 @@ promo-archive__icon--visible
 
 ## Container-query
 Вернемся к примеру с block_promo-archive. Предположим, нам надо сделать, чтобы на широких экранах картинка выглядела так:
-![](flex-container.png | width=200)
+<img src="flex-container.png" width="200">
+
 
 
 И на экранах меньше 720px:
-![](flex-container-mobile.png | width=200)
+<img src="flex-container-mobile.png" width="200">
+
 
 
 Внешний стиль контейнера мы уже научились определять через flex-box. Попробуем определить геометрию контейнеров без помощи media-query.
