@@ -12,6 +12,7 @@
 
 ## Ну, конкретнее можно?
 Да, вот такие селекторы, не ясны, сложно поддерживаемы и создают конфликты стилей:
+
 `
 .menu-item:not(.menu-item-has-children) > div > a {
 	margin-left: $base;
@@ -20,11 +21,13 @@
 
 ## Немного матчасти: Уровни специфичности
 
-inline > layer > id > class/attribute/pseudo-class > type/pseudo-element
+Уровень специфичности на уровне стилей:
+
+inline < layer < id < class/attribute/pseudo-class < type/pseudo-element
 
 [Классная статья о каскадах](https://2019.wattenberger.com/blog/css-cascade)
-One thing to note about levels on this tier is that the number of hits on the highest-reached level matter.
 
+Важный пункт: побеждает тот стиль, в котором больше специфичных селекторов самой высокой специфичности. 
 
 
 Для примера, попробуйте понять, какой стиль выиграет:
@@ -150,20 +153,22 @@ promo-archive__icon--visible
 Вкратце: грид, флексбокс, контейнер-квери, css-функции
 
 ## CSS-функции
-- max()
-- min()
-- minmax()
-- clamp()
+- max: `width: max(300px, 50%);`
+- min: `height: min(200px, 30vh);`
+- minmax: `grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));`
+- clamp: `height: clamp(150px, 50vh, 300px);`
 
 ## Flex-box
+![](flex-wrap.svg)
+
 - Организация адаптивной структуры
 - Центрирование элементов
 
 ```
 .flex-block {
 	display: flex;
-	align-self: center;
-	justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 ```
 
@@ -218,6 +223,8 @@ promo-archive__icon--visible
 [Все о возможностях Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ## Grid
+![](grid.svg)
+
 - grid-areas
 - Больше не использовать position: absolute
 
@@ -231,6 +238,7 @@ promo-archive__icon--visible
   grid-area: 1/1;
 }
 ```
+[Пример](https://pqina.nl/blog/css-grid-position-absolute-alternative/)
 
 [Все о возможностях Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
@@ -264,6 +272,8 @@ promo-archive__icon--visible
 
 
 ## Snap-points
+Чтобы делать прокрутку, привязанную к месторасположению, уже не нужно использовать js-библиотеки, это поддерживается в css:
+
 ```
 .snaps {
   overflow-x: scroll;
@@ -282,6 +292,11 @@ promo-archive__icon--visible
 
 ## Ссылки
 [6 новых возможностей CSS, которые должен знать каждый front-end разработчик в 2023 году](https://habr.com/ru/articles/726224/)
+
 [На английском](https://web.dev/6-css-snippets-every-front-end-developer-should-know-in-2023/)
 
-[Возможности современного адаптива](https://ishadeed.com/)
+[Руководство по реализации отзывчивого дизайна в 2023 году](https://habr.com/ru/companies/ruvds/articles/718700/)
+
+[На английском](https://ishadeed.com/article/responsive-design/)
+
+[CanIUse.com -- проверять поддержку css в браузерах](https://caniuse.com/)
