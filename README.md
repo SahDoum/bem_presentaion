@@ -167,7 +167,8 @@ promo-archive__icon--visible
 - clamp: `height: clamp(150px, 50vh, 300px);`
 
 ## Flex-box
-![](flex-wrap.svg)
+<img src="flex-wrap.svg" height="250">
+
 
 - Организация адаптивной структуры
 - Центрирование элементов
@@ -310,4 +311,4 @@ promo-archive__icon--visible
 
 [На английском](https://ishadeed.com/article/responsive-design/)
 
-[CanIUse.com -- проверять поддержку css в браузерах](https://caniuse.com/)
+[CanIUse.com --  поддержка css в браузерах](https://caniuse.com/)
