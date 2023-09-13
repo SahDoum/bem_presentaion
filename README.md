@@ -20,6 +20,8 @@
 `
 
 ## Немного матчасти: Уровни специфичности
+<img src="css-cascade.svg" height="500">
+
 
 Уровень специфичности на уровне стилей:
 
@@ -179,10 +181,10 @@ promo-archive__icon--visible
 ```
 
 Предположим, мы хотим такую структуру элементов на широких экранах:
-<img src="flex-container-abstract.png" width="200">
+<img src="flex-container-abstract.png" width="300">
 
 И такую на экранах меньше 720px:
-<img src="flex-container-mobile-abstract.png" width="200">
+<img src="flex-container-mobile-abstract.png" width="300">
 
 Хочется написать что-то вроде такого:
 
@@ -229,7 +231,8 @@ promo-archive__icon--visible
 [Все о возможностях Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ## Grid
-![](grid.svg)
+<img src="grid.svg" height="250">
+
 
 - grid-areas
 - Больше не использовать position: absolute
@@ -251,12 +254,12 @@ promo-archive__icon--visible
 
 ## Container-query
 Вернемся к примеру с block_promo-archive. Предположим, нам надо сделать, чтобы на широких экранах картинка выглядела так:
-<img src="flex-container.png" width="200">
+<img src="flex-container.png" width="300">
 
 
 
 И на экранах меньше 720px:
-<img src="flex-container-mobile.png" width="200">
+<img src="flex-container-mobile.png" width="300">
 
 
 
@@ -297,6 +300,8 @@ promo-archive__icon--visible
 ```
 
 ## Ссылки
+[БЭМ](https://ru.bem.info/methodology/)
+
 [6 новых возможностей CSS, которые должен знать каждый front-end разработчик в 2023 году](https://habr.com/ru/articles/726224/)
 
 [На английском](https://web.dev/6-css-snippets-every-front-end-developer-should-know-in-2023/)
